@@ -26,16 +26,24 @@ public class BookController {
         return "allBook";
     }
 
-    // 跳转到增加书籍页面
+    // 跳转到添加书籍页面
     @RequestMapping("/toAddBook")
     public String toAddPage() {
         return "addBook";
     }
 
+    // 添加书籍
     @RequestMapping("/addBook")
     public String addBook(Books books) {
         System.out.println("addBook=>" + books);
         bookService.addBook(books);
         return "redirect:/book/allBook"; // 重定向到/allBook请求
+    }
+
+    @RequestMapping("/toUpdate")
+    public String toUpdatePage(int bookID, Model model) {
+        Books books = bookService.getBookById(bookID);
+        model.addAttribute("books", books);
+        return "updateBook";
     }
 }
