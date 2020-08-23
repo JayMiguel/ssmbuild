@@ -9,7 +9,7 @@
         values (#{bookID},#{bookName},#{bookCounts},#{detail});
     </insert>
 
-    <delete id="deleteBook" parameterType="int">
+    <delete id="deleteBookById" parameterType="int">
         delete from Books where bookID = #{bookID};
     </delete>
 
@@ -24,5 +24,9 @@
 
     <select id="getAllBook" resultType="Books">
         select * from Books;
+    </select>
+
+    <select id="queryBookByName" resultType="Books">
+        select * from Books where bookName=#{bookName};
     </select>
 </mapper>

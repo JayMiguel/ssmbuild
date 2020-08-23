@@ -18,23 +18,24 @@
         <div class="col-md-12 column">
             <div class="page-header">
                 <h1>
-                    <small>书籍列表 —————— 显示所有书籍</small>
+                    <small>修改书籍</small>
                 </h1>
             </div>
         </div>
     </div>
-    <form action="${pageContext.request.contextPath}/book/addBook" method="post">
+    <form action="${pageContext.request.contextPath}/book/updateBook" method="post">
+        <input type="hidden" name="bookID" value="${QBook.bookID}"/>
         <div class="form-group">
             <label>书籍名称：</label>
-            <input name="bookName" type="text" class="form-control" required>
+            <input name="bookName" type="text" class="form-control" value="${QBook.bookName}" required>
         </div>
         <div class="form-group">
             <label>书籍数量：</label>
-            <input name="bookCounts" type="text" class="form-control" required>
+            <input name="bookCounts" type="text" class="form-control" value="${QBook.bookCounts}" required>
         </div>
         <div class="form-group">
             <label>书籍详情：</label>
-            <input name="detail" type="text" class="form-control" required>
+            <input name="detail" type="text" class="form-control" value="${QBook.detail}" required>
         </div>
         <div class="form-group">
             <input type="submit" class="form-control" value="添加">

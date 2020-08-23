@@ -9,11 +9,13 @@ public interface BookMapper {
 
     int addBook(Books books);
 
-    int deleteBookById(@Param("bookID") int bookID);
+    int deleteBookById(@Param("bookID") int id);
 
     int updateBook(Books books);
 
-    Books getBookById(@Param("bookID")int bookID);
+    Books getBookById(@Param("bookID")int id);
 
     List<Books> getAllBook();
+
+    Books queryBookByName(String bookName);
 }
